@@ -19,7 +19,7 @@ TransVAE-ს დამატებით სჭირდება ეს ორ�
 - `data/peptide_vocab.pkl`
 - `data/peptide_weight.npy`
 
-სრული პაიპლაინი მოცემულია notebooks/ საქაღალდეში, თითოეული notebook იწყება path-setup უჯრედით, რომელიც რეპოს root-ს ამატებს sys.path-ში და src/-დან shared კოდს აიმპორტებს. თუ Colab-ზე მუშაობთ, დააყენეთ ROOT თქვენს clone/Drive path-ზე სანამ დანარჩენ cell-ებს გაუშვებთ.
+სრული პაიპლაინი მოცემულია notebooks/ საქაღალდეში, თითოეული notebook იწყება path-setup უჯრით, რომელიც რეპოზიტორიის root-ს ამატებს sys.path-ში და src/-დან shared კოდს აიმპორტებს. თუ Colab-ზე მუშაობთ, დააყენეთ ROOT თქვენს clone/Drive path-ზე სანამ დანარჩენ cell-ებს გაუშვებთ.
 
 Configs
 ცალკეული ექსპერიმენტების პარამეტრები აღწერილია configs/-ში YAML ფაილების სახით, თითოეული default.yaml-ს იყენებს საერთო პარამეტრებისთვის და მხოლოდ ექსპერიმენტისთვის სპეციფიკურ მონაცემებს (data path-ები, checkpoint-ები, generation პარამეტრები) ამატებს. მაგალითად, configs/baumannii_enterica.yaml აღწერს A. baumannii + S. enterica organism-conditional ექსპერიმენტს.
