@@ -22,11 +22,13 @@ TransVAE-ს დამატებით სჭირდება ეს ორ�
 სრული პაიპლაინი მოცემულია notebooks/ საქაღალდეში, თითოეული notebook იწყება path-setup უჯრით, რომელიც რეპოზიტორიის root-ს ამატებს sys.path-ში და src/-დან shared კოდს აიმპორტებს. თუ Colab-ზე მუშაობთ, დააყენეთ ROOT თქვენს clone/Drive path-ზე სანამ დანარჩენ cell-ებს გაუშვებთ.
 
 Configs
+
 ცალკეული ექსპერიმენტების პარამეტრები აღწერილია configs/-ში YAML ფაილების სახით, თითოეული default.yaml-ს იყენებს საერთო პარამეტრებისთვის და მხოლოდ ექსპერიმენტისთვის სპეციფიკურ მონაცემებს (data path-ები, checkpoint-ები, generation პარამეტრები) ამატებს. მაგალითად, configs/baumannii_enterica.yaml აღწერს A. baumannii + S. enterica organism-conditional ექსპერიმენტს.
 
 ## Requirements
 
 Core:
+
 python >= 3.9
 numpy>=1.23,<2.0, pandas>=1.5
 torch>=2.0
