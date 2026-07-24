@@ -1,0 +1,25 @@
+# Experiment: all 9 organisms (organism-conditional, no leveling)
+extends: default.yaml
+
+experiment:
+  name: organisms_9
+  description: Phase-2 diffusion conditioned on the full 9-organism map
+
+data:
+  csv: data/processed/peptide_organism_pairs_final.csv
+  latents_dir: data/processed/latents/latents_p2_all/cond_latents_new
+  files:
+    latents: cond_latents.npy
+    organisms: cond_organisms.npy
+    organism_map: organism_map.npy
+
+checkpoints:
+  phase1: checkpoints/phase1/best_model.pth
+  phase2: checkpoints/phase2_initial_9organisms/best_model.pth
+
+generation:
+  num_sequences: 15000
+  batch_size: 64
+  cfg_scale: 1.0
+  generate_all_organisms: true
+  output_dir: results/generated/initial_results_9organisms

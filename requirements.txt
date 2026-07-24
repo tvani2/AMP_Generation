@@ -1,0 +1,21 @@
+# Core
+numpy>=1.23,<2.0
+pandas>=1.5
+torch>=2.0
+matplotlib>=3.7
+seaborn>=0.13
+tqdm>=4.65
+scikit-learn==1.2.2
+
+# Bioinformatics / peptides
+biopython>=1.81
+peptides>=0.3
+
+# Optional experiment tracking
+wandb>=0.16
+
+# Evaluation extras (notebooks/05_evaluation_pipeline.ipynb)
+transformers>=4.36
+gdown>=5.0
+# toxinpred3   # install separately if used
+# amplify      # cloned in the evaluation notebook when needed

@@ -1,0 +1,28 @@
+# Experiment: all 9 organisms WITH potency leveling
+extends: default.yaml
+
+experiment:
+  name: organisms_9_leveled
+  description: Phase-2 diffusion with 9 organisms + Weak/Moderate/Strong levels
+
+data:
+  csv: data/processed/pairs_with_levelings.csv
+  latents_dir: data/processed/latents/latents_p2_withLevelings/9org/cond_latents_new
+  files:
+    latents: cond_latents.npy
+    organisms: cond_organisms.npy
+    levels: cond_levels.npy
+    organism_map: organism_map.npy
+    level_map: level_map.npy
+
+checkpoints:
+  phase1: checkpoints/phase1/best_model.pth
+  phase2: checkpoints/phase2_leveled_9organisms/best_model.pth
+
+generation:
+  num_sequences: 15000
+  batch_size: 64
+  cfg_scale: 1.0
+  potency_level: Strong
+  generate_all_organisms: true
+  output_dir: results/generated/leveled_9organisms

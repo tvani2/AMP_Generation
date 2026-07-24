@@ -1,0 +1,31 @@
+# Shared defaults (paths relative to repository root)
+project:
+  name: amp-latent-diffusion
+  latent_dim: 128
+  latent_scale: 25.0
+
+paths:
+  vocab: data/peptide_vocab.pkl
+  weights: data/peptide_weight.npy
+  vae_checkpoint: checkpoints/vae_weights.pth
+  raw_mic: data/processed/peptide_organism_mic.csv
+  raw_dbaasp: data/raw/dbaasp_raw.csv
+  raw_grampa: data/raw/grampa.csv
+  raw_nonamp: data/raw/non_amp_sequences_4k.csv
+  pairs_final: data/processed/peptide_organism_pairs_final.csv
+  pairs_leveled: data/processed/pairs_with_levelings.csv
+
+organisms_9:
+  - A. baumannii
+  - B. subtilis
+  - E. coli
+  - E. faecalis
+  - K. pneumoniae
+  - P. aeruginosa
+  - S. aureus
+  - S. enterica
+  - S. epidermidis
+
+levels:
+  names: [Weak, Moderate, Strong]
+  ids: {weak: 0, moderate: 1, strong: 2}

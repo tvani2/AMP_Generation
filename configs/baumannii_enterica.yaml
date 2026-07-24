@@ -1,0 +1,30 @@
+# Experiment: A. baumannii + S. enterica (organism-conditional, no leveling)
+extends: default.yaml
+
+experiment:
+  name: baumannii_enterica
+  description: Phase-2 diffusion conditioned on 2 organisms (no potency levels)
+
+data:
+  csv: data/processed/Enterica_Baumannii.csv
+  latents_dir: data/processed/latents/latent_p2_Baumannii-Enterica/cond_latents_new
+  files:
+    latents: cond_latents.npy
+    organisms: cond_organisms.npy
+    organism_map: organism_map.npy
+
+checkpoints:
+  phase1: checkpoints/phase1/best_model.pth
+  phase2: checkpoints/phase2_BaumanniiEnterica/best_model.pth
+
+generation:
+  num_sequences: 15000
+  batch_size: 64
+  cfg_scale: 1.0
+  output_dir: results/generated/baumannii_enterica
+
+# Optional non-AMP control run for the same organism pair
+nonamp:
+  csv: data/processed/Enterica_Baumannii_NonAmps.csv
+  latents_dir: data/processed/latents/latents_p2_Baumannii_Enterica_nonamps/cond_latents_new
+  checkpoint: checkpoints/phase2_BaumanniiEnterica/nonamp/best_model.pth

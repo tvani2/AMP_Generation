@@ -1,0 +1,27 @@
+# Experiment: A. baumannii + S. enterica WITH potency leveling
+extends: default.yaml
+
+experiment:
+  name: baumannii_enterica_leveled
+  description: Phase-2 diffusion with organism + Weak/Moderate/Strong level embeddings
+
+data:
+  csv: data/processed/pairs_with_levelings.csv  # filter to these 2 organisms when encoding
+  latents_dir: data/processed/latents/latents_p2_withLevelings/2org-baumannii-enterica/cond_latents_new
+  files:
+    latents: cond_latents.npy
+    organisms: cond_organisms.npy
+    levels: cond_levels.npy
+    organism_map: organism_map.npy
+    level_map: level_map.npy
+
+checkpoints:
+  phase1: checkpoints/phase1/best_model.pth
+  phase2: checkpoints/phase2_BaumanniiEnterica_leveled/best_model.pth
+
+generation:
+  num_sequences: 15000
+  batch_size: 64
+  cfg_scale: 1.0
+  potency_level: Strong   # Weak | Moderate | Strong | null
+  output_dir: results/generated/baumannii_enterica_leveled
